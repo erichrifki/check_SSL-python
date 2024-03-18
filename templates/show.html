@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Data</title>
+    <!---
+    <style>
+        /* Styling tombol (opsional) */
+        .my-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .my-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    -->
+</head>
+<body>
+    <h1>Data yang Disimpan</h1>
+    <ul>
+        {% for item in data %}
+            <li>{{ item.strip() }} <form action="/delete" method="post" style="display:inline;"><button type="submit" name="data" value="{{ item.strip() }}">Hapus</button></form></li>
+        {% endfor %}
+    </ul>
+    <button onclick="location.href='/'">back</button>
+</body>
+</html>

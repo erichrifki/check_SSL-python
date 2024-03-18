@@ -1,0 +1,9 @@
+globalxtreme.net
+mail.dps.globalxtreme.net
+prtg.dps.globalxtreme.net
+prtg.ntt.globalxtreme.net
+prtg.eqx.globalxtreme.net
+prtg.mlg.globalxtreme.net
+prtg.bpn.globalxtreme.net
+prtg.smd.globalxtreme.net
+payments.globalxtreme-gateway.net

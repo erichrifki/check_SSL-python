@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data</title>
+    <!--- 
+    <style>
+        /* Styling tombol (opsional) */
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .title{
+            background-color: skyblue;
+            color: black;
+            text-align: center;
+        }
+    </style>
+    --->
+</head>
+<body>
+    <h1 class="title">Formulir Input Domain</h1>
+    <form action="/submit" method="post">
+        <label for="data">Add Domain:</label>
+        <input type="text" id="data" name="data" required>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <button onclick="location.href='/show'">Show Domain</button>
+    <br>
+    <h3>Running manual</h3>
+    <form action="{{ url_for('run_script') }}" method="post">
+        <button type="submit">Run</button>
+    </form>
+   
+    <br>
+    <br>
+    <form method="post">
+        <label for="website">Domain:</label>
+        <input type="text" name="website" required>
+        <button type="submit">Check</button>
+    </form>
+
+
+    {% if cert_info %}
+        <h3>SSL Certificate Information</h3>
+        {% if cert_info.error %}
+            <p>Error: {{ cert_info.error }}</p>
+        {% else %}
+            <p>Issued To: {{ cert_info.issued_to }}</p>
+            <p>Issued By: {{ cert_info.issued_by }}</p>
+            <p>Expiration Date: {{ cert_info.expiration_date }}</p>
+        {% endif %}
+    {% endif %}
+
+    <br>
+    <br>
+    
+
+    
+</body>
+</html>
